@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Axios  from "axios";
 export const makeid = (length) => {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -14,28 +15,24 @@ export const makeid = (length) => {
 function AdminProductForm() {
     let fileRef = React.createRef()
     let sampleDisplay = React.createRef()
+    let finalPrintDisplay = React.createRef()
     let finalPrint = React.createRef()
+    let formRef = React.createRef()
     const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(e.target.files.files)
-        var file = e.target.files.files[0]
-        var img = document.createElement("img")
-        img.setAttribute('width', 100)
-        var reader = new FileReader()
-        reader.onloadend = function () {
-            img.src = reader.result;
-        }
-        reader.readAsDataURL(file);
+     let   fd = new FormData(e.target)
+     Axios.post(
+        'http://127.0.0.1:8000/form',fd
 
-        var es = document.getElementById('sample');
-        es.appendChild(img);
+    ).then(value=>{
+        console.log(value);
+    });
 
         return e.preventDefault();
     }
 
     const handleFinalPrint = () => {
-        sampleDisplay.current.innerHTML = ''
-        for (let index = 0; index < fileRef.current.files.length; index++) {
+        finalPrintDisplay.current.innerHTML = ''
+        for (let index = 0; index < finalPrint.current.files.length; index++) {
             var reader = new FileReader();
 
             reader.onloadend = (e) => {
@@ -44,11 +41,11 @@ function AdminProductForm() {
                 img.setAttribute("id", l);
                 img.setAttribute('width', 100)
                 img.src = reader.result
-                sampleDisplay.current.appendChild(img)
+                finalPrintDisplay.current.appendChild(img)
                 document.getElementById(l).src = e.target.result;
 
             }
-            reader.readAsDataURL(fileRef.current.files[index])
+            reader.readAsDataURL(finalPrint.current.files[index])
 
         }
     }
@@ -80,7 +77,7 @@ function AdminProductForm() {
                 <div className="col-md-8">
                     <div className="card">
                         <div className='container'>
-                            <form onSubmit={handleSubmit}>
+                            <form ref={formRef} onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="amount">Amount</label>
                                     <input type="text" name='amount' className="form-control" id="amount" placeholder="Amount" />
@@ -95,7 +92,7 @@ function AdminProductForm() {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="files">Final Print</label>
-                                    <input type="file" ref={finalPrint} onChange={handleImgs} name='finalPrint' multiple={false} className="form-control-file" id="files" />
+                                    <input type="file" ref={finalPrint} onChange={handleFinalPrint} name='finalPrint' multiple={false} className="form-control-file" id="files" />
                                 </div>
 
 
@@ -103,6 +100,9 @@ function AdminProductForm() {
                             </form>
                         </div>
                         <div ref={sampleDisplay} id='sample'></div>
+                        <hr />
+                        <br />
+                        <div ref={finalPrintDisplay}  ></div>
                     </div>
                 </div>
             </div>
