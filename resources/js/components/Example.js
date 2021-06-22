@@ -21,7 +21,13 @@ function AdminProductForm() {
     const handleSubmit = (e) => {
      let   fd = new FormData(e.target)
      Axios.post(
-        'http://127.0.0.1:8000/form',fd
+        'http://127.0.0.1:8000/api/form',fd ,
+        {
+            headers: {
+                'Accept': 'Application/json',
+                'Authorization': `Bearer LUELIgcrtxK411jMBRZY8ojLeUjNlTVZ6uTmHC9RqfHYIXlL5s4tgpmZOcg4`
+              }
+        }
 
     ).then(value=>{
         console.log(value);

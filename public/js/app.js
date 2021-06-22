@@ -1944,7 +1944,12 @@ function AdminProductForm() {
 
   var handleSubmit = function handleSubmit(e) {
     var fd = new FormData(e.target);
-    axios__WEBPACK_IMPORTED_MODULE_2___default().post('http://127.0.0.1:8000/form', fd).then(function (value) {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().post('http://127.0.0.1:8000/api/form', fd, {
+      headers: {
+        'Accept': 'Application/json',
+        'Authorization': "Bearer LUELIgcrtxK411jMBRZY8ojLeUjNlTVZ6uTmHC9RqfHYIXlL5s4tgpmZOcg4"
+      }
+    }).then(function (value) {
       console.log(value);
     });
     return e.preventDefault();
