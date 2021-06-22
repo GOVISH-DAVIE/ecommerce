@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Axios  from "axios";
+export const url = 'http://127.0.0.1:8000/api/';
 export const makeid = (length) => {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -11,6 +12,7 @@ export const makeid = (length) => {
     return result;
 }
 
+var token  ='7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g'
 
 function AdminProductForm() {
     let fileRef = React.createRef()
@@ -25,13 +27,17 @@ function AdminProductForm() {
         {
             headers: {
                 'Accept': 'Application/json',
-                'Authorization': `Bearer LUELIgcrtxK411jMBRZY8ojLeUjNlTVZ6uTmHC9RqfHYIXlL5s4tgpmZOcg4`
+                'Authorization': `Bearer 7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g`
               }
         }
 
     ).then(value=>{
         console.log(value);
-    });
+    })
+    .catch(err=>{
+        console.log(err);
+    })
+    ;
 
         return e.preventDefault();
     }
@@ -94,7 +100,7 @@ function AdminProductForm() {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="files">Upload Image</label>
-                                    <input type="file" ref={fileRef} onChange={handleImgs} name='files' multiple className="form-control-file" id="files" />
+                                    <input type="file" ref={fileRef} onChange={handleImgs} name='files[]' multiple className="form-control-file" id="files" />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="files">Final Print</label>

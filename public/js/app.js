@@ -1855,6 +1855,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
 
+__webpack_require__(/*! ./components/ClientHome */ "./resources/js/components/ClientHome.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -1901,6 +1903,48 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/ClientHome.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/ClientHome.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Example__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Example */ "./resources/js/components/Example.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var ClientHome = function ClientHome() {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().get(_Example__WEBPACK_IMPORTED_MODULE_3__.url + 'property').then(function (value) {
+      console.log(value);
+    });
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    children: "'client'"
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClientHome);
+
+if (document.getElementById('ClientHome')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ClientHome, {}), document.getElementById('ClientHome'));
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/Example.js":
 /*!********************************************!*\
   !*** ./resources/js/components/Example.js ***!
@@ -1910,6 +1954,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "url": () => (/* binding */ url),
 /* harmony export */   "makeid": () => (/* binding */ makeid),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -1923,6 +1968,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var url = 'http://127.0.0.1:8000/api/';
 var makeid = function makeid(length) {
   var result = '';
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -1934,6 +1980,7 @@ var makeid = function makeid(length) {
 
   return result;
 };
+var token = '7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g';
 
 function AdminProductForm() {
   var fileRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef();
@@ -1947,10 +1994,12 @@ function AdminProductForm() {
     axios__WEBPACK_IMPORTED_MODULE_2___default().post('http://127.0.0.1:8000/api/form', fd, {
       headers: {
         'Accept': 'Application/json',
-        'Authorization': "Bearer LUELIgcrtxK411jMBRZY8ojLeUjNlTVZ6uTmHC9RqfHYIXlL5s4tgpmZOcg4"
+        'Authorization': "Bearer 7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g"
       }
     }).then(function (value) {
       console.log(value);
+    })["catch"](function (err) {
+      console.log(err);
     });
     return e.preventDefault();
   };
@@ -2043,7 +2092,7 @@ function AdminProductForm() {
                   type: "file",
                   ref: fileRef,
                   onChange: handleImgs,
-                  name: "files",
+                  name: "files[]",
                   multiple: true,
                   className: "form-control-file",
                   id: "files"
