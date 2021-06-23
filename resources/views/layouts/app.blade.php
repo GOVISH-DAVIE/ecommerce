@@ -13,6 +13,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
+    
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -76,8 +77,22 @@
         </nav>
 
         <main class="py-4">
+
             @yield('content')
+            
         </main>
     </div>
+    <script src="https://unpkg.com/intasend-inlinejs-sdk@2.0.8/build/intasend-inline.js"></script>
+<script>
+    window.IntaSend.setup({
+        publicAPIKey: "ISPubKey_live_7fa6e783-27ac-42fd-97ca-626210eead7e",
+        // Optional URL to redirect your clients after payment
+        redirectURL: "http://flemingtech.ac.ke/", 
+         
+        live: false,
+        
+    })
+</script>
 </body>
+
 </html>

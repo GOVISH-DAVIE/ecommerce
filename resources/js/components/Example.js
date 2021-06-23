@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Axios  from "axios";
+import Axios from "axios";
 export const url = 'http://127.0.0.1:8000/api/';
 export const makeid = (length) => {
     var result = '';
@@ -12,7 +12,7 @@ export const makeid = (length) => {
     return result;
 }
 
-var token  ='7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g'
+var token = '7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g'
 
 function AdminProductForm() {
     let fileRef = React.createRef()
@@ -21,23 +21,23 @@ function AdminProductForm() {
     let finalPrint = React.createRef()
     let formRef = React.createRef()
     const handleSubmit = (e) => {
-     let   fd = new FormData(e.target)
-     Axios.post(
-        'http://127.0.0.1:8000/api/form',fd ,
-        {
-            headers: {
-                'Accept': 'Application/json',
-                'Authorization': `Bearer 7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g`
-              }
-        }
+        let fd = new FormData(e.target)
+        Axios.post(
+            url + 'form', fd,
+            {
+                headers: {
+                    'Accept': 'Application/json',
+                    'Authorization': `Bearer 7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g`
+                }
+            }
 
-    ).then(value=>{
-        console.log(value);
-    })
-    .catch(err=>{
-        console.log(err);
-    })
-    ;
+        ).then(value => {
+            console.log(value);
+        })
+            .catch(err => {
+                console.log(err);
+            })
+            ;
 
         return e.preventDefault();
     }

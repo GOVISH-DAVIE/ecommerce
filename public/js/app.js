@@ -1951,28 +1951,35 @@ var ClientHome = function ClientHome() {
     });
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    children: ["'client'", properties.map(function (value, index) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-          className: "card-img-top",
-          src: "/storage/".concat(value['finalimage']),
-          alt: "Card image cap"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "card-body",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
-            className: "card-title",
-            children: value['Title']
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
-            className: "card-title",
-            children: value['finalimage']
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-            href: "#",
-            className: "btn btn-primary",
-            children: "Go somewhere"
-          })]
-        })]
-      }, index);
+    className: "container",
+    children: ["'client'", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "row",
+      children: properties.map(function (value, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "col-md-4",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "card",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              className: "card-img-top",
+              src: "/storage/".concat(value['finalimage']),
+              alt: "Card image cap"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+              className: "card-body",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
+                className: "card-title",
+                children: value['Title']
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
+                className: "card-title",
+                children: value['finalimage']
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                href: "#",
+                className: "btn btn-primary",
+                children: "Go somewhere"
+              })]
+            })]
+          })
+        }, index);
+      })
     })]
   });
 };
@@ -2031,7 +2038,7 @@ function AdminProductForm() {
 
   var handleSubmit = function handleSubmit(e) {
     var fd = new FormData(e.target);
-    axios__WEBPACK_IMPORTED_MODULE_2___default().post('http://127.0.0.1:8000/api/form', fd, {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().post(url + 'form', fd, {
       headers: {
         'Accept': 'Application/json',
         'Authorization': "Bearer 7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g"

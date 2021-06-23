@@ -14,17 +14,22 @@ const ClientHome = () => {
         )
 
     })
-    return (<div>'client'
+    return (<div className='container'>'client'
+        <div className='row'>
         {
-            properties.map((value, index) => <div key={index} className="card"  >
+            properties.map((value, index) =><div  key={index}    className='col-md-4'>
+                 <div className="card"  >
                 <img className="card-img-top" src={`/storage/${value['finalimage']}`} alt="Card image cap"/>
                     <div className="card-body">
                         <h5 className="card-title">{value['Title']}</h5>
                         <h5 className="card-title">{value['finalimage']}</h5>
                          <a href="#" className="btn btn-primary">Go somewhere</a>
                     </div>
-          </div>)
+          </div>
+                </div>
+          )
         }
+       </div>
             </div>);
 }
 
