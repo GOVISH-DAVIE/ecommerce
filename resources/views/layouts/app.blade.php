@@ -79,8 +79,6 @@
         <main class="py-4">
 
             @yield('content')
-            <button class="tp_button" data-api_ref="payment-link" data-phone-number="254796217595"
-            data-email="9davidmuia@gmail.com" data-amount="100" data-currency="KES">Pay Now</button>
             
         </main>
     </div>

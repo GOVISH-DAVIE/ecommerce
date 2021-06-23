@@ -51,7 +51,7 @@ class ClientController extends Controller
     {
         //
         $property = Properties::find($id);
-        return 22;
+        return view('client.show')->with('property', $property);
 
     }
 
