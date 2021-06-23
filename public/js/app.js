@@ -2334,9 +2334,7 @@ var ShowPayment = function ShowPayment(props) {
 };
 
 if (document.getElementById('ShowPayment')) {
-  var element = document.getElementById('ShowPayment'); // create new props object with element's data-attributes
-  // result: {tsId: "1241"}
-
+  var element = document.getElementById('ShowPayment');
   var props = Object.assign({}, element.dataset);
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ShowPayment, _objectSpread({}, props)), element);
 }

@@ -21,7 +21,7 @@ export const ShowPayment = (props) => {
 
         })
     }, [])
-    useEffect(() => { 
+    useEffect(() => {
         setprice(count * parseInt(JSON.parse(props.showpaymentid).amount))
     }, [count])
     const onchangeItem = (e) => setcount(e.target.value)
@@ -45,10 +45,7 @@ export const ShowPayment = (props) => {
 }
 
 if (document.getElementById('ShowPayment')) {
-    const element = document.getElementById('ShowPayment')
-
-    // create new props object with element's data-attributes
-    // result: {tsId: "1241"}
+    const element = document.getElementById('ShowPayment') 
     const props = Object.assign({}, element.dataset)
 
     ReactDOM.render(<ShowPayment {...props} />, element);
