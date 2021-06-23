@@ -16,7 +16,8 @@ class ClientController extends Controller
     public function index()
     {
         //
-        return view('client.home');
+        $propeties = Properties::all();
+        return view('client.home')->with('propeties', $propeties);
     }
 
     /**

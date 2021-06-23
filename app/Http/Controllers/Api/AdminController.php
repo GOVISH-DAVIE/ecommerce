@@ -43,14 +43,18 @@ class AdminController extends Controller
         # code...
         $images = array();
         if (isset($_FILES['files'])) {
-          
-                foreach ($_FILES['files']['name'] as $file => $value) {
 
-                    Storage::putFileAs('public/', new File($_FILES["files"]["tmp_name"][$file]),  STR::random(10) . time() . '.' . pathinfo($_FILES["files"]["name"][$file], PATHINFO_EXTENSION));
-                    array_push($images, STR::random(10) . time() . '.' . pathinfo($_FILES["files"]["name"][$file], PATHINFO_EXTENSION));
-                }
-                return json_encode($images);
-            
+            foreach ($_FILES['files']['name'] as $file => $value) {
+                $fileNameToStore = STR::random(10) . time() . '.' . pathinfo($_FILES["files"]["name"][$file], PATHINFO_EXTENSION);
+                Storage::putFileAs(
+                    'public/',
+                    new File($_FILES["files"]["tmp_name"][$file]),
+                    $fileNameToStore
+                );
+                array_push($images, $fileNameToStore);
+            }
+            return json_encode($images);
+
             # code...
 
         } else {
@@ -72,7 +76,7 @@ class AdminController extends Controller
         $s->Title = $request->input('title');
         $s->finalimage = $this->uploadFinalImage($request);
         $s->save();
-        return json_encode( array('data' => 'success' ));
+        return json_encode(array('data' => 'success'));
     }
 
 

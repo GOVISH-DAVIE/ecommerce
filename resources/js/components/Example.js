@@ -124,6 +124,6 @@ function AdminProductForm() {
 
 export default AdminProductForm;
 
-if (document.getElementById('example')) {
+if (document.getElementById('example')) {    
     ReactDOM.render(<AdminProductForm />, document.getElementById('example'));
 }
