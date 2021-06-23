@@ -1940,15 +1940,57 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var ClientHome = function ClientHome() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
+    "id": 9,
+    "amount": "893",
+    "Title": "Accounts Manager",
+    "images": "[\"ynv3smjdS81624398644.jpg\",\"ZakmzJRRTz1624398644.jpg\",\"P7dhJA2dpN1624398644.jpg\",\"HIWm7wseY51624398644.jpg\",\"Q26BPZtNyF1624398644.jpg\"]",
+    "finalimage": "BtgA6U2xhO_1624398644.jpg",
+    "created_at": "2021-06-22T21:50:44.000000Z",
+    "updated_at": "2021-06-22T21:50:44.000000Z"
+  }, {
+    "id": 10,
+    "amount": "893",
+    "Title": "Accounts Manager",
+    "images": "[\"iR4ZzP5Dkd1624398645.jpg\",\"cnmwVqo1YA1624398645.jpg\",\"HgWwMqvLnF1624398645.jpg\",\"j2TTVOPRMj1624398645.jpg\",\"5V2KvuAbdB1624398645.jpg\"]",
+    "finalimage": "FshfEZCiDC_1624398645.jpg",
+    "created_at": "2021-06-22T21:50:45.000000Z",
+    "updated_at": "2021-06-22T21:50:45.000000Z"
+  }, {
+    "id": 11,
+    "amount": "893",
+    "Title": "Accounts Manager",
+    "images": "[\"y2JUjXvhdf1624398646.jpg\",\"kqJz2FeP0i1624398646.jpg\",\"Thou3RTWuD1624398646.jpg\",\"VN4UEUMrOA1624398646.jpg\",\"pa8JHUcWtm1624398646.jpg\"]",
+    "finalimage": "lsIoBrgrOz_1624398646.jpg",
+    "created_at": "2021-06-22T21:50:46.000000Z",
+    "updated_at": "2021-06-22T21:50:46.000000Z"
+  }, {
+    "id": 12,
+    "amount": "893",
+    "Title": "Accounts Manager",
+    "images": "[\"ibRpQDFRSD1624398646.jpg\",\"aMtqS7nQoS1624398646.jpg\",\"PUbxnOvoMd1624398646.jpg\",\"5It54SFQiI1624398646.jpg\",\"ParnQtUjMP1624398646.jpg\"]",
+    "finalimage": "jcbxNNTmHk_1624398646.jpg",
+    "created_at": "2021-06-22T21:50:46.000000Z",
+    "updated_at": "2021-06-22T21:50:46.000000Z"
+  }, {
+    "id": 13,
+    "amount": "893",
+    "Title": "Accounts Manager",
+    "images": "[\"su5m7WjGgk1624398647.jpg\",\"cjOyLu5AhP1624398647.jpg\",\"hSPYSpHSTd1624398647.jpg\",\"ZgGvAkfwKK1624398647.jpg\",\"8DcZEYPaeR1624398647.jpg\"]",
+    "finalimage": "2KZk4UTANO_1624398647.jpg",
+    "created_at": "2021-06-22T21:50:47.000000Z",
+    "updated_at": "2021-06-22T21:50:47.000000Z"
+  }]),
       _useState2 = _slicedToArray(_useState, 2),
       properties = _useState2[0],
       setProperties = _useState2[1];
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_2___default().get(_Example__WEBPACK_IMPORTED_MODULE_3__.url + 'property').then(function (value) {
-      setProperties(value.data);
-    });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {// Axios.get(url + 'property').then(
+    //     value => {
+    //         console.log(value.data);
+    //         setProperties(value.data)
+    //     }
+    // )
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "container",
@@ -1958,7 +2000,7 @@ var ClientHome = function ClientHome() {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "col-md-4",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "card",
+            className: "card ",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
               className: "card-img-top",
               src: "/storage/".concat(value['finalimage']),
@@ -1968,13 +2010,16 @@ var ClientHome = function ClientHome() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
                 className: "card-title",
                 children: value['Title']
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h5", {
                 className: "card-title",
-                children: value['finalimage']
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                href: "#",
-                className: "btn btn-primary",
-                children: "Go somewhere"
+                children: ["KEs ", value['amount']]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                className: "show",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                  href: "#",
+                  className: "btn btn-primary",
+                  children: "View"
+                })
               })]
             })]
           })

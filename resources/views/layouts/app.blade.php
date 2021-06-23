@@ -79,15 +79,17 @@
         <main class="py-4">
 
             @yield('content')
+            <button class="tp_button" data-api_ref="payment-link" data-phone-number="254796217595"
+            data-email="9davidmuia@gmail.com" data-amount="100" data-currency="KES">Pay Now</button>
             
         </main>
     </div>
     <script src="https://unpkg.com/intasend-inlinejs-sdk@2.0.8/build/intasend-inline.js"></script>
 <script>
     window.IntaSend.setup({
-        publicAPIKey: "ISPubKey_live_7fa6e783-27ac-42fd-97ca-626210eead7e",
+        publicAPIKey: "ISPubKey_test_e37f1334-366b-4b5e-9975-7793b6891a00",
         // Optional URL to redirect your clients after payment
-        redirectURL: "http://flemingtech.ac.ke/", 
+        redirectURL: "https://flemingtech.ac.ke/", 
          
         live: false,
         
