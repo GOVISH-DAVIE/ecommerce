@@ -2230,7 +2230,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- // import Inters from 'intasend-inlinejs-sdk'
+ // import Inta/ from 'intasend-inlinejs-sdk'
+// import Inters from 'intasend-inlinejs-sdk'
 
 
 
@@ -2254,14 +2255,12 @@ var ShowPayment = function ShowPayment(props) {
       setUser = _useState6[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    setprice(parseInt(JSON.parse(props.showpaymentid).amount));
-    setUser(JSON.parse(props.authdata));
     window.IntaSend.setup({
       publicAPIKey: "ISPubKey_test_e37f1334-366b-4b5e-9975-7793b6891a00",
-      // Optional URL to redirect your clients after payment
-      redirectURL: "https://flemingtech.ac.ke/",
       live: false
     });
+    setprice(parseInt(JSON.parse(props.showpaymentid).amount));
+    setUser(JSON.parse(props.authdata));
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setprice(count * parseInt(JSON.parse(props.showpaymentid).amount));
@@ -2286,7 +2285,15 @@ var ShowPayment = function ShowPayment(props) {
           onChange: onchangeItem,
           value: count
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          className: "tp_button col-sm-8 shadow",
+          className: "tp_button ",
+          onClick: function onClick() {
+            return window.IntaSend.run({
+              amount: price,
+              currency: "KES",
+              phone_number: "254796217595",
+              email: user.email
+            });
+          },
           "data-api_ref": "payment-link",
           "data-phone-number": "254796217595",
           "data-email": user.email,

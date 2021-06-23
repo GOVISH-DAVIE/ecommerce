@@ -11,9 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    
     <!-- Fonts -->
+
+ 
 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -83,20 +84,24 @@
         <main class="py-4">
 
             @yield('content')
-
+            
         </main>
     </div>
-    <script src="https://unpkg.com/intasend-inlinejs-sdk@2.0.8/build/intasend-inline.js"></script>
-    <script>
-        window.IntaSend.setup({
-            publicAPIKey: "ISPubKey_test_e37f1334-366b-4b5e-9975-7793b6891a00",
-            // Optional URL to redirect your clients after payment
-            redirectURL: "https://flemingtech.ac.ke/",
-
-            live: false,
-
-        })
-    </script>
+    
 </body>
+
+<script src="{{ asset('js/app.js') }}"defer  ></script>
+<script src="https://unpkg.com/intasend-inlinejs-sdk@2.0.8/build/intasend-inline.js"  ></script>
+
+{{-- <script defer  >
+    window.IntaSend.setup({
+        publicAPIKey: "ISPubKey_test_e37f1334-366b-4b5e-9975-7793b6891a00",
+        // Optional URL to redirect your clients after payment
+        redirectURL: "https://flemingtech.ac.ke/",
+
+        live: false,
+
+    })
+</script> --}}
 
 </html>
