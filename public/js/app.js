@@ -1859,6 +1859,8 @@ __webpack_require__(/*! ./components/ClientHome */ "./resources/js/components/Cl
 
 __webpack_require__(/*! ./components/ShowPayment */ "./resources/js/components/ShowPayment.js");
 
+__webpack_require__(/*! ./components/showItem */ "./resources/js/components/showItem.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -2305,18 +2307,18 @@ var ShowPayment = function ShowPayment(props) {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      "class": "card",
+      className: "card col-sm-12",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        "class": "card-body",
+        className: "card-body",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h5", {
-          "class": "card-title",
+          className: "card-title",
           children: ["KEs ", price]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
           type: "number",
           onChange: onchangeItem,
           value: count
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          "class": "tp_button",
+          className: "tp_button",
           "data-api_ref": "payment-link",
           "data-phone-number": "254796217595",
           "data-email": "9davidmuia@gmail.com",
@@ -2325,7 +2327,7 @@ var ShowPayment = function ShowPayment(props) {
           children: "Pay Now"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
           href: "#",
-          "class": "btn btn-primary",
+          className: "btn btn-primary",
           children: "Go somewhere"
         })]
       })
@@ -2337,6 +2339,71 @@ if (document.getElementById('ShowPayment')) {
   var element = document.getElementById('ShowPayment');
   var props = Object.assign({}, element.dataset);
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ShowPayment, _objectSpread({}, props)), element);
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/showItem.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/showItem.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ShowItem": () => (/* binding */ ShowItem)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Example__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Example */ "./resources/js/components/Example.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+ // import Inters from 'intasend-inlinejs-sdk'
+
+
+
+var ShowItem = function ShowItem(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "container",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      "class": "card  noshadow",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+        "class": "card-img-top",
+        src: "...",
+        alt: "Card image cap"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        "class": "card-body",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
+          "class": "card-title",
+          children: "Card title"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          "class": "card-text",
+          children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+          href: "#",
+          "class": "btn btn-primary",
+          children: "Go somewhere"
+        })]
+      })]
+    })
+  });
+};
+
+if (document.getElementById('ShowItem')) {
+  var element = document.getElementById('ShowItem');
+  var props = Object.assign({}, element.dataset);
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ShowItem, _objectSpread({}, props)), element);
 }
 
 /***/ }),

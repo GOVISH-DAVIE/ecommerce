@@ -27,18 +27,18 @@ export const ShowPayment = (props) => {
     const onchangeItem = (e) => setcount(e.target.value)
 
 
-    return <div>
-        <div class="card" >
-            <div class="card-body">
-                <h5 class="card-title">KEs {
+    return <div  >
+        <div className="card col-sm-12" >
+            <div className="card-body">
+                <h5 className="card-title">KEs {
                     price
                 }</h5>
 
                 <input type='number' onChange={onchangeItem} value={count} />
-                <button class="tp_button" data-api_ref="payment-link" data-phone-number="254796217595"
+                <button className="tp_button" data-api_ref="payment-link" data-phone-number="254796217595"
                     data-email="9davidmuia@gmail.com" data-amount={price} data-currency="KES">Pay Now</button>
 
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" className="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>

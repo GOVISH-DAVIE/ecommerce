@@ -1,14 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="row ">
+<div class="container-fluid">
+    <div class="row ">
 
-        <div class="col-sm-12 col-md-8">
-            <div id="showItem"></div>
+        <div class=" col-md-8"  >
+            vfvf
+            <div id="ShowItem"  data-ShowItemid="{{ $property }}"></div>
         </div>
-        <div class="col-sm-12 col-md-4">
+        <div class=" col-md-4">
             <div id="ShowPayment" data-ShowPaymentid="{{ $property }}"></div> 
            
         </div>
     </div>
+</div>
 @endsection
