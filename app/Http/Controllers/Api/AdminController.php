@@ -68,8 +68,8 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        // return  $this->uploadImages();
+    { 
+        
         $s = new Properties();
         $s->amount = $request->input('amount');
         $s->images = $this->uploadImages();

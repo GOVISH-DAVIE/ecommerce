@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 const ClientHome = (props) => {
     const [properties, setProperties] = useState([])
     useEffect(() => setProperties(JSON.parse(props.clienthome))  , [])
-    return (<div className='container'>'client'
+    return (<div className='container'>
         <div className='row'> {
             properties.map((value, index) => <div key={index} className='col-md-4'>
                 <div className="card "  >

@@ -1953,9 +1953,9 @@ var ClientHome = function ClientHome(props) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     return setProperties(JSON.parse(props.clienthome));
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "container",
-    children: ["'client'", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "row",
       children: [" ", properties.map(function (value, index) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -1986,7 +1986,7 @@ var ClientHome = function ClientHome(props) {
           })
         }, index);
       })]
-    })]
+    })
   });
 };
 
