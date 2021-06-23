@@ -1,8 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import Axios from "axios";
-import { url } from './Example';
 // import Inters from 'intasend-inlinejs-sdk'
 
 
@@ -12,22 +10,29 @@ export const ShowItem = (props) => {
     useEffect(() => {
         setproperty(JSON.parse(props.showitemid))
         setActiveImage(JSON.parse(JSON.parse(props.showitemid).images)[0])
-        
-        
     }, [])
-    return property == null?<></>:<div className='container'>
-        <div class="card  noshadow"  >
-            <img class="card-img-top" src={'/storage/'+activeImage} alt="Card image cap" />
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">{
-                    JSON.stringify(property.finalimage
+    const changeActiveImage = im => setActiveImage(im)
+    return property == null ? <></> : <div className='container'>
+        <div className="card  noshadow"  >
+            <img className="card-img-top" src={'/storage/' + activeImage} alt="Card image cap" />
+            <div className="card-body">
+                <h5 className="card-title"><b>{property.Title}</b></h5>
+
+                <div className='row'>
+                    {
+                        JSON.parse(property.images).map((element) => <div  
+                        onClick={() => changeActiveImage(element)} key={element} className='smapleImg'>
+                            <img style={{border: activeImage == element? "solid rgb(86, 109, 56) 2px ":"none"}} src={'/storage/' + element} height={60} width={60} />
+                        </div>
+
                         )
-                }</p>
-                <p class="card-text">{
-                    activeImage
-                }</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                       
+                    }
+                     <div    className='smapleImg'>
+                            <img   src={'/storage/' + property.finalimage} height={60} width={60} />
+                        </div>  
+                </div>
+
             </div>
         </div>
     </div>;

@@ -27,7 +27,7 @@
   background-color: #f5f5f5 !important;
   padding: 4px 2px 2px;
   border: none !important;
-  box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2), -8px -8px 18px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2), -8px -8px 10px 0 rgba(255, 255, 255, 0.2);
 }
 .card .card-img-top {
   background-color: #f5f5f5 !important;
@@ -114,6 +114,16 @@
 
 .noshadow {
   box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.2), 0px 0px 0px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.smapleImg {
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 10px;
+}
+.smapleImg img {
+  padding: 10px;
 }
 
 /*!
