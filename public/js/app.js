@@ -2351,24 +2351,34 @@ var ShowItem = function ShowItem(props) {
       activeImage = _useState4[0],
       setActiveImage = _useState4[1];
 
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      finImage = _useState6[0],
+      setFinImage = _useState6[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setproperty(JSON.parse(props.showitemid));
     setActiveImage(JSON.parse(JSON.parse(props.showitemid).images)[0]);
   }, []);
 
   var changeActiveImage = function changeActiveImage(im) {
-    return setActiveImage(im);
+    setActiveImage(im);
+    setFinImage(false);
   };
 
   return property == null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "container",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "card  noshadow",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+      children: [!finImage ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
         className: "card-img-top",
         src: '/storage/' + activeImage,
         alt: "Card image cap"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+        className: "card-img-top",
+        src: '/by.jpg',
+        alt: "Card image cap"
+      }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "card-body",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
           className: "card-title",
@@ -2393,6 +2403,9 @@ var ShowItem = function ShowItem(props) {
               })
             }, element);
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            onClick: function onClick() {
+              return setFinImage(true);
+            },
             className: "smapleImg",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
               src: '/storage/' + property.finalimage,
