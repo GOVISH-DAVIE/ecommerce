@@ -71,7 +71,7 @@ const ClientHome = () => {
                             <h5 className="card-title">{value['Title']}</h5>
                             <h5 className="card-title">KEs {value['amount']}</h5>
                             <div className='show'>
-                                <a href="#" className="btn btn-primary">View</a>
+                                <a href={'/index/'+value['id']} className=" col-sm-12 btn btn-primary">View</a>                                                            
                             </div>
                         </div>
                     </div>

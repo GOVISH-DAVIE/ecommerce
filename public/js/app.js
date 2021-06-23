@@ -2016,8 +2016,8 @@ var ClientHome = function ClientHome() {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                 className: "show",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-                  href: "#",
-                  className: "btn btn-primary",
+                  href: '/index/' + value['id'],
+                  className: " col-sm-12 btn btn-primary",
                   children: "View"
                 })
               })]
