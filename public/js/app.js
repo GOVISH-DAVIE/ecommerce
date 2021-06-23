@@ -2234,6 +2234,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var ShowPayment = function ShowPayment(props) {
   console.log(JSON.parse(props.showpaymentid)); // useEffect
 
@@ -2247,8 +2248,14 @@ var ShowPayment = function ShowPayment(props) {
       count = _useState4[0],
       setcount = _useState4[1];
 
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      user = _useState6[0],
+      setUser = _useState6[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setprice(parseInt(JSON.parse(props.showpaymentid).amount));
+    setUser(JSON.parse(props.authdata));
     window.IntaSend.setup({
       publicAPIKey: "ISPubKey_test_e37f1334-366b-4b5e-9975-7793b6891a00",
       // Optional URL to redirect your clients after payment
@@ -2264,30 +2271,28 @@ var ShowPayment = function ShowPayment(props) {
     return setcount(e.target.value);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+  return user == null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "card col-sm-12",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "card-body",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h5", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
           className: "card-title",
-          children: ["KEs ", price]
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("b", {
+            children: ["KEs ", price]
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
           type: "number",
           onChange: onchangeItem,
           value: count
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          className: "tp_button",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+          className: "tp_button col-sm-8 shadow",
           "data-api_ref": "payment-link",
           "data-phone-number": "254796217595",
-          "data-email": "9davidmuia@gmail.com",
+          "data-email": user.email,
           "data-amount": price,
           "data-currency": "KES",
-          children: "Pay Now"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-          href: "#",
-          className: "btn btn-primary",
-          children: "Go somewhere"
+          children: "Buy Now"
         })]
       })
     })

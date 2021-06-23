@@ -126,6 +126,16 @@
   padding: 10px;
 }
 
+.tp_button {
+  border-radius: 2px;
+  height: 60px;
+  width: 80%;
+  margin-top: 20px;
+  background-color: #566d38;
+  border: none !important;
+  color: white;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

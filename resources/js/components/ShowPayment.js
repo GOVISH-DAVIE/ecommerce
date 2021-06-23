@@ -11,8 +11,10 @@ export const ShowPayment = (props) => {
     // useEffect
     const [price, setprice] = useState(0)
     const [count, setcount] = useState(1)
+    const [user, setUser] = useState(null)
     useEffect(() => {
         setprice(parseInt(JSON.parse(props.showpaymentid).amount))
+        setUser(JSON.parse(props.authdata))
         window.IntaSend.setup({
             publicAPIKey: "ISPubKey_test_e37f1334-366b-4b5e-9975-7793b6891a00",
             // Optional URL to redirect your clients after payment
@@ -27,18 +29,18 @@ export const ShowPayment = (props) => {
     const onchangeItem = (e) => setcount(e.target.value)
 
 
-    return <div  >
+    return user ==null?<></>: <div  >
         <div className="card col-sm-12" >
-            <div className="card-body">
-                <h5 className="card-title">KEs {
+            <div className="card-body">  
+                <h3 className="card-title"><b>KEs {
                     price
-                }</h5>
+                }</b></h3>
 
                 <input type='number' onChange={onchangeItem} value={count} />
-                <button className="tp_button" data-api_ref="payment-link" data-phone-number="254796217595"
-                    data-email="9davidmuia@gmail.com" data-amount={price} data-currency="KES">Pay Now</button>
-
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <br />
+                <button className="tp_button col-sm-8 shadow" data-api_ref="payment-link" data-phone-number="254796217595"
+                    data-email={user.email} data-amount={price} data-currency="KES">Buy Now</button>
+ 
             </div>
         </div>
     </div>

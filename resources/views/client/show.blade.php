@@ -8,7 +8,7 @@
                 <div id="ShowItem" data-ShowItemid="{{ $property }}"></div>
             </div>
             <div class=" col-md-4">
-                <div id="ShowPayment" data-ShowPaymentid="{{ $property }}"></div>
+                <div id="ShowPayment" data-AuthData="{{ auth()->user() }}" data-ShowPaymentid="{{ $property }}"></div>
 
             </div>
         </div>
