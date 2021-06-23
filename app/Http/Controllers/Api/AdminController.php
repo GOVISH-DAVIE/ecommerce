@@ -93,8 +93,8 @@ class AdminController extends Controller
                 // file name to store
                 $fileNameToStore = Str::random(10) . '_' . time() . '.' . $extension;
                 // Upload Image
-                $path = $request->file('finalPrint')->storeAs('public/', $fileNameToStore);
-                return $path;
+                $path = $request->file('finalPrint')->storeAs('public', $fileNameToStore);
+                return $fileNameToStore;
             }
         } else {
             return false;
