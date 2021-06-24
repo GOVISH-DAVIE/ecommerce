@@ -45,10 +45,6 @@
   background-color: #566d38;
   border: none !important;
 }
-.card .card-body .show:hover {
-  -webkit-animation: yourAnimation 3s forwards 0s ease-in;
-          animation: yourAnimation 3s forwards 0s ease-in;
-}
 
 @-webkit-keyframes yourAnimationReduction {
   0% {
@@ -138,6 +134,72 @@
 
 .navbar {
   background-color: transparent;
+}
+
+.header {
+  background: url(/images/bg.webp?2056a4bd6903bd5b23cee7ab3b55031b);
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center;
+  background-size: auto;
+  text-align: center;
+}
+.header .container {
+  background-color: rgba(128, 128, 128, 0.083);
+  width: 60%;
+  text-justify: newspaper;
+}
+.header .container .btn {
+  background-color: white;
+  color: black;
+  height: 50px;
+  width: 200px;
+  border: none;
+  border-radius: 30px;
+}
+.header .container p {
+  color: white;
+  text-justify: newspaper;
+}
+.header .container h1 {
+  font-size: 90px;
+  color: white;
+  text-justify: newspaper;
+}
+
+.header2 {
+  background-image: url(/images/22.webp?9d0d4bf4302326f7b2ce7655cd6410ef);
+  background-color: transparent !important;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center;
+  background-size: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header2 .container {
+  background-color: rgba(128, 128, 128, 0.083);
+  width: 60%;
+  text-justify: newspaper;
+}
+.header2 .container .btn {
+  background-color: white;
+  color: black;
+  height: 50px;
+  width: 200px;
+  border: none;
+  border-radius: 30px;
+}
+.header2 .container p {
+  color: white;
+  text-justify: newspaper;
+}
+.header2 .container h1 {
+  font-size: 90px;
+  color: white;
+  text-justify: newspaper;
 }
 
 /*!
