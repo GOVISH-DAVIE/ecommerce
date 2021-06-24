@@ -169,11 +169,11 @@
 
 .header2 {
   background-image: url(/images/22.webp?9d0d4bf4302326f7b2ce7655cd6410ef);
-  background-color: transparent !important;
+  background-color: red !important;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 60vh;
   background-position: center;
-  background-size: auto;
+  background-size: fill;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -204,6 +204,7 @@
 
 .carousel {
   background-color: #566d38 !important;
+  margin: 0% !important;
 }
 .carousel .carousel-control-prev {
   color: black !important;

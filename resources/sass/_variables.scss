@@ -200,11 +200,11 @@ $cyan: #6cb2eb;
 
 .header2 {
     background-image: url(../22.webp);
-    background-color: transparent !important;
+    background-color: red !important;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 60vh;
     background-position: center;
-    background-size: auto;
+    background-size: fill;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -243,6 +243,7 @@ $cyan: #6cb2eb;
 
 .carousel {
     background-color: rgb(86, 109, 56) !important;
+    margin: 0% !important;
 .carousel-control-prev{
     color: black !important;
 }

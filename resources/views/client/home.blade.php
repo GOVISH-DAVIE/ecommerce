@@ -82,4 +82,13 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+
+
+
+    <div class="container">
+        <div class="card">
+            
+        </div>
+    </div>
 @endsection
