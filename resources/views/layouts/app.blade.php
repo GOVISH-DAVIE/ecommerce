@@ -86,6 +86,11 @@
             @yield('content')
             
         </main>
+        <hr>
+        <div class="container cp">
+            
+        © 2020 Copyright: 9davidmuia@gmail.com
+        </div>
     </div>
     
 </body>
