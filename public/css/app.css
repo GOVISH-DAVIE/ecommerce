@@ -202,6 +202,22 @@
   text-justify: newspaper;
 }
 
+.carousel {
+  background-color: #566d38 !important;
+}
+.carousel .carousel-control-prev {
+  color: black !important;
+}
+.carousel .carousel-inner .carousel-item .sliderText {
+  height: 100vh;
+  font-size: 22px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

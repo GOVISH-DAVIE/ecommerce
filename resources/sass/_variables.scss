@@ -240,3 +240,28 @@ $cyan: #6cb2eb;
         }
     }
 }
+
+.carousel {
+    background-color: rgb(86, 109, 56) !important;
+.carousel-control-prev{
+    color: black !important;
+}
+    .carousel-inner {
+
+        .carousel-item {
+
+
+            .sliderText {
+                height: 100vh;
+                font-size: 22px;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+
+            }
+        }
+    }
+}
