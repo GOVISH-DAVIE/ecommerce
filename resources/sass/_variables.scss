@@ -269,5 +269,13 @@ $cyan: #6cb2eb;
 
 .contactForm{
     height: 100vh; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .row{
+        width: 100%;
+    }
 
 }
