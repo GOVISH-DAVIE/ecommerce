@@ -171,7 +171,7 @@ $cyan: #6cb2eb;
         background-color: rgba(128, 128, 128, 0.083);
         width: 60%;
         text-justify: newspaper;
-        
+
 
         .btn {
             background-color: white;
@@ -197,6 +197,7 @@ $cyan: #6cb2eb;
         }
     }
 }
+
 .header2 {
     background-image: url(../22.webp);
     background-color: transparent !important;
@@ -205,9 +206,9 @@ $cyan: #6cb2eb;
     background-position: center;
     background-size: auto;
     text-align: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .container {
         background-color: rgba(128, 128, 128, 0.083);
