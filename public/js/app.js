@@ -2268,7 +2268,8 @@ var ShowPayment = function ShowPayment(props) {
 
   var onchangeItem = function onchangeItem(e) {
     return setcount(e.target.value);
-  };
+  }; // window.addEventListener(onmessage, )
+
 
   return user == null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -2287,12 +2288,40 @@ var ShowPayment = function ShowPayment(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
           className: "tp_button ",
           onClick: function onClick() {
-            return window.IntaSend.run({
+            window.IntaSend.run({
               amount: price,
               currency: "KES",
               phone_number: "254796217595",
               email: user.email
             });
+            window.addEventListener('messages', function (e) {
+              console.log(e.data);
+
+              if (e.data.message) {
+                console.log(e.data);
+
+                if (e.data.message.identitier == 'intasend-status-update-cdrtl') {
+                  if (e.data.message.state === "COMPLETE") {// Do something on pay success
+                    // Make sure redirectURL is ommited in 
+                    // your setup function for this to work well
+                  }
+                }
+              }
+            }, false);
+            window.addEventListener(onmessage, function (e) {
+              console.log(e.data);
+
+              if (e.data.message) {
+                console.log(e.data);
+
+                if (e.data.message.identitier == 'intasend-status-update-cdrtl') {
+                  if (e.data.message.state === "COMPLETE") {// Do something on pay success
+                    // Make sure redirectURL is ommited in 
+                    // your setup function for this to work well
+                  }
+                }
+              }
+            }, false);
           },
           "data-api_ref": "payment-link",
           "data-phone-number": "254796217595",

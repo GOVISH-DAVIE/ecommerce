@@ -11,8 +11,10 @@ export const ShowItem = (props) => {
     useEffect(() => {
         setproperty(JSON.parse(props.showitemid))
         setActiveImage(JSON.parse(JSON.parse(props.showitemid).images)[0])
+  
     }, [])
-    const changeActiveImage = im =>{
+  
+    const changeActiveImage = im => {
         setActiveImage(im)
         setFinImage(false)
     }

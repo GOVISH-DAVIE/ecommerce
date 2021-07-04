@@ -11,10 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    
+
     <!-- Fonts -->
 
- 
+
 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -39,7 +39,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                      
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -66,7 +66,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -84,19 +84,35 @@
         <main class="py-4">
 
             @yield('content')
-            
+
         </main>
         <hr>
         <div class="container cp">
-            
-        © 2020 Copyright: 9davidmuia@gmail.com
+
+            © 2020 Copyright: 9davidmuia@gmail.com
         </div>
     </div>
-    
+
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://unpkg.com/intasend-inlinejs-sdk@2.0.8/build/intasend-inline.js"></script>
+
+
+    <script>
+        function bindEvent(element, eventName, eventHandler) {
+            if (element.addEventListener) {
+                console.log('add event listener');
+                element.addEventListener(eventName, eventHandler);
+            } else if (element.attachEvent) {
+                console.log('attach event');
+                element.attachEvent('on' + eventName, eventHandler);
+            }
+        }
+      
+           
+    </script>
+
 </body>
 
-<script src="{{ asset('js/app.js') }}"defer  ></script>
-<script src="https://unpkg.com/intasend-inlinejs-sdk@2.0.8/build/intasend-inline.js"  ></script>
 
 {{-- <script defer  >
     window.IntaSend.setup({
@@ -108,5 +124,10 @@
 
     })
 </script> --}}
+<script>
+
+
+
+</script>
 
 </html>

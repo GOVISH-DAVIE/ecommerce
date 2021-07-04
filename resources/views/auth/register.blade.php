@@ -38,6 +38,15 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('Telephone Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="Tel" type="tel" class="form-control  " name="tel"  required autocomplete="tel">
+
+                              
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
