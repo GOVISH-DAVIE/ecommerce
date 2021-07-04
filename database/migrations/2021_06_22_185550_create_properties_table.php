@@ -19,6 +19,14 @@ class CreatePropertiesTable extends Migration
             $table->string('Title');
             $table->string('images');
             $table->string('finalimage');
+
+            $table->string('stories');
+            $table->string('area');
+            $table->string('bedroom');
+            $table->string('length');
+            $table->string('width');
+            $table->string('bath');
+
             $table->timestamps();
         });
     }

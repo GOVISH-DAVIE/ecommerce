@@ -98,6 +98,57 @@ function AdminProductForm() {
                                     <label htmlFor="title">Title</label>
                                     <input type="text" name='title' className="form-control" id="title" placeholder="Title" />
                                 </div>
+                                {/* stories
+                                area
+                                bath
+                                bedroom
+                                length
+                                width */}
+                                <div className='row'>
+                                    <div className='col-sm-6 col-md-4' >
+                                        <div className="form-group">
+                                            <label htmlFor="Stories">Stories</label>
+                                            <input type="text" name='stories' className="form-control" id="Stories" placeholder="Stories" />
+                                        </div>
+                                    </div>
+                                    <div className='col-sm-6 col-md-4' >
+                                        <div className="form-group">
+                                            <label htmlFor="Area">Area(sq)</label>
+                                            <input type="text" name='area' className="form-control" id="Area" placeholder="Area" />
+                                        </div>
+                                    </div>
+                                    <div className='col-sm-6 col-md-4' >
+                                        <div className="form-group">
+                                            <label htmlFor="Bedroom">Bedroom</label>
+                                            <input type="text" name='bedroom' className="form-control" id="Bedroom" placeholder="Bedroom" />
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div className='row'>
+                                    <div className='col-sm-6 col-md-4' >
+                                        <div className="form-group">
+                                            <label htmlFor="Length">Length</label>
+                                            <input type="text" name='length' className="form-control" id="Length" placeholder="Length" />
+                                        </div>
+                                    </div>
+                                    <div className='col-sm-6 col-md-4' >
+                                        <div className="form-group">
+                                            <label htmlFor="Width">Width</label>
+                                            <input type="text" name='width' className="form-control" id="Width" placeholder="Width" />
+                                        </div>
+                                    </div>
+                                    <div className='col-sm-6 col-md-4' >
+                                        <div className="form-group">
+                                            <label htmlFor="Bath">Bath</label>
+                                            <input type="text" name='bath' className="form-control" id="Bath" placeholder="Bath" />
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
                                 <div className="form-group">
                                     <label htmlFor="files">Upload Image</label>
                                     <input type="file" ref={fileRef} onChange={handleImgs} name='files[]' multiple className="form-control-file" id="files" />
@@ -124,6 +175,6 @@ function AdminProductForm() {
 
 export default AdminProductForm;
 
-if (document.getElementById('example')) {    
+if (document.getElementById('example')) {
     ReactDOM.render(<AdminProductForm />, document.getElementById('example'));
 }
