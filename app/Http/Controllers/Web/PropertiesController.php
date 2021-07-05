@@ -85,6 +85,7 @@ class PropertiesController extends Controller
      */
     public function destroy($id)
     {
-        //
+         Properties::find($id)->delete();
+         return redirect()->back();
     }
 }
