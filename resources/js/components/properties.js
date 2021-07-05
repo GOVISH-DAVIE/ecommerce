@@ -4,6 +4,7 @@ import Axios from "axios";
 export const Sidebar = () => <ul>
     <li><a href='new'>new Property</a></li>
     <li><a href='properties'>Properties</a></li>
+    <li><a href='order'>Orders</a></li>
 </ul>
 export const Properties = (props) => {
     // const [properties, setProperties] = useState([ ])
