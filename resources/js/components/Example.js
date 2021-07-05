@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Axios from "axios";
-export const url = 'http://127.0.0.1:8000/api/';
+import Axios from "axios"; 
+// export const Sidebar = () => <ul>
+//     <li><a href='new'>new Property</a></li>
+//     <li><a href='properties'>Properties</a></li>
+//     <li><a href='order'>Orders</a></li>
+// </ul>
+export const url = '/api/';
 export const makeid = (length) => {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -86,7 +91,11 @@ function AdminProductForm() {
             <div className="row justify-content-center">
                 <div className='col-md-4 sidebar shadow'>
                     <br />
-                   <Sidebar />
+                    <ul>
+                        <li><a href='new'>new Property</a></li>
+                        <li><a href='properties'>Properties</a></li>
+                        <li><a href='order'>Orders</a></li>
+                    </ul>
                 </div>
                 <div className="col-md-8">
                     <div className="card">

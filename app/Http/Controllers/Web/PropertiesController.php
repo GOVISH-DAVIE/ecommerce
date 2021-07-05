@@ -29,7 +29,7 @@ class PropertiesController extends Controller
     public function create()
     {
         //
-        return    view('home');
+        return  view('home');
     }
 
     /**
