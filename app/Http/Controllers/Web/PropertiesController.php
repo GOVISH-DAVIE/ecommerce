@@ -17,7 +17,7 @@ class PropertiesController extends Controller
     {
         //
         $s = Properties::all();
-        return view('client.properties');
+        return view('client.properties')->with('property', $s);
 
     }
 

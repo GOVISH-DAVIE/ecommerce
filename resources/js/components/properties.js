@@ -14,7 +14,9 @@ export const Properties = (props) => {
                     <Sidebar />
                 </div>
                 <div className="col-md-8">
-
+{
+    JSON.stringify(props    )
+}
                 </div>
             </div>
         </div>
@@ -23,5 +25,6 @@ export const Properties = (props) => {
 // export default Properties;
 
 if (document.getElementById('Properties')) {
-    ReactDOM.render(<Properties />, document.getElementById('Properties'));
+    const props = Object.assign({},  document.getElementById('Properties').dataset)
+    ReactDOM.render(<Properties {...props} />, document.getElementById('Properties'));
 }
