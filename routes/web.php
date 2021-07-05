@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AdminController;
 use App\Http\Controllers\Web\ClientController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -19,3 +20,4 @@ Route::get('/',  [ClientController::class, 'index']);
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('index', ClientController::class);
+Route::get('/properties', [AdminController::class, 'index']);

@@ -33,6 +33,7 @@ function AdminProductForm() {
 
         ).then(value => {
             console.log(value);
+            window.location.href = '/properties'
         })
             .catch(err => {
                 console.log(err);

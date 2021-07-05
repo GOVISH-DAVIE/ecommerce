@@ -2053,6 +2053,7 @@ function AdminProductForm() {
       }
     }).then(function (value) {
       console.log(value);
+      window.location.href = '/properties';
     })["catch"](function (err) {
       console.log(err);
     });
@@ -2550,6 +2551,25 @@ var ShowItem = function ShowItem(props) {
               width: 60
             })
           })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "container",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "row",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "col-sm-6 col-md-3",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "card",
+                style: {
+                  textAlign: 'center'
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  children: " Bedroom"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h2", {
+                  children: [" ", property.bedroom]
+                })]
+              })
+            })
+          })
         })]
       })]
     })

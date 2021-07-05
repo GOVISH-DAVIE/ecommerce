@@ -19,6 +19,7 @@ class AdminController extends Controller
      */
     public function index()
     {
+        return 22;
         //
     }
 
@@ -73,7 +74,19 @@ class AdminController extends Controller
         $s = new Properties();
         $s->amount = $request->input('amount');
         $s->images = $this->uploadImages();
+
         $s->Title = $request->input('title');
+
+        $s->stories = $request->input('stories');
+        $s->area = $request->input('area');
+        $s->bedroom = $request->input('bedroom');
+        $s->length = $request->input('length');
+        $s->width = $request->input('width');
+        $s->bath = $request->input('bath');
+
+
+
+
         $s->finalimage = $this->uploadFinalImage($request);
         $s->save();
         return json_encode(array('data' => 'success'));

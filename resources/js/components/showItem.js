@@ -11,9 +11,9 @@ export const ShowItem = (props) => {
     useEffect(() => {
         setproperty(JSON.parse(props.showitemid))
         setActiveImage(JSON.parse(JSON.parse(props.showitemid).images)[0])
-  
+
     }, [])
-  
+
     const changeActiveImage = im => {
         setActiveImage(im)
         setFinImage(false)
@@ -39,6 +39,17 @@ export const ShowItem = (props) => {
                     }
                     <div onClick={() => setFinImage(true)} className='smapleImg'>
                         <img src={'/storage/' + property.finalimage} height={60} width={60} />
+                    </div>
+                </div>
+                <div className='container' >
+                    <div className='row' >
+                        <div className='col-sm-6 col-md-3'>
+                            <div className='card' style={{ textAlign: 'center' }}>
+                                <h3> Bedroom</h3>
+                                <h2> {property.bedroom}</h2>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
