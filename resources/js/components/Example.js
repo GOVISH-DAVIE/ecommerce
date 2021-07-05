@@ -86,12 +86,7 @@ function AdminProductForm() {
             <div className="row justify-content-center">
                 <div className='col-md-4 sidebar shadow'>
                     <br />
-                    <br />
-                    <br />
-                    <ul>
-                        <li><a href='new'>new Property</a></li>
-                        <li><a href='Properties'>Properties</a></li>
-                    </ul>
+                   <Sidebar />
                 </div>
                 <div className="col-md-8">
                     <div className="card">

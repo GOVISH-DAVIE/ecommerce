@@ -17,3 +17,4 @@ require('./components/Example');
 require('./components/ClientHome');
 require('./components/ShowPayment');
 require('./components/showItem');
+require('./components/properties');
