@@ -26,11 +26,23 @@ $cyan: #6cb2eb;
 
 .sidebar {
     height: 100vh;
-
     padding: 4px 30px 20px;
     background-color: transparent;
-
     border-radius: 20px;
+    width: 100%;
+    ul{
+        list-style: none;
+        width: 100%;
+        li{
+            text-align: center;
+            height: 40px;
+            border-bottom: #d3d2d2 1px solid;
+        }
+        li:hover{
+            background-color: #d3d2d2;
+            cursor: pointer;
+        }
+    }
     // -webkit-box-shadow: 10px -9px 10px 0px rgba(3,1,1,0.68);
     // -moz-box-shadow: 10px -9px 10px 0px rgba(3,1,1,0.68);
     // }
@@ -283,3 +295,4 @@ $cyan: #6cb2eb;
 .cp{
     text-align: center;
 }
+

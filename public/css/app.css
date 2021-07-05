@@ -9,6 +9,20 @@
   padding: 4px 30px 20px;
   background-color: transparent;
   border-radius: 20px;
+  width: 100%;
+}
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+}
+.sidebar ul li {
+  text-align: center;
+  height: 40px;
+  border-bottom: #d3d2d2 1px solid;
+}
+.sidebar ul li:hover {
+  background-color: #d3d2d2;
+  cursor: pointer;
 }
 
 .card:hover .show {

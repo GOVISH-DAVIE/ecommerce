@@ -55,7 +55,7 @@ export const ShowItem = (props) => {
                                 <h3> Stories</h3>
                                 <h2> {property.stories}</h2>
                             </div>
-
+                    
                         </div>
                         <div className='col-sm-6 col-xs-6 col-md-3'>
                             <div className='card' style={{ textAlign: 'center' }}>
