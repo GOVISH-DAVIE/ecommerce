@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AdminController;
+use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\Web\ClientController;
 use App\Http\Controllers\Web\PropertiesController;
 use Illuminate\Support\Facades\Auth;
@@ -16,12 +17,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+    
 Route::get('/',  [ClientController::class, 'index']);
 Auth::routes();
+Route::post('loginres',[AuthController::class, 'login']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('index', ClientController::class);
-// Route::get('/properties', [AdminController::class, 'index']);
-Route::get('/new', [PropertiesController::class, 'create']);
-// Route::get('/properties', [PropertiesController::class, 'index']);
+Route::resource('index', ClientController::class); 
+Route::get('/new', [PropertiesController::class, 'create']); 
 Route::resource('properties', PropertiesController::class);

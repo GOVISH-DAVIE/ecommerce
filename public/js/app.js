@@ -2069,7 +2069,7 @@ function AdminProductForm(props) {
       setuser = _useState2[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    setuser(props.auth);
+    setuser(JSON.parse(props.auth));
   }, []);
   var fileRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef();
   var sampleDisplay = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef();
@@ -2082,7 +2082,7 @@ function AdminProductForm(props) {
     axios__WEBPACK_IMPORTED_MODULE_2___default().post(url + 'form', fd, {
       headers: {
         'Accept': 'Application/json',
-        'Authorization': "Bearer 7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g"
+        'Authorization': "Bearer ".concat(user.tl)
       }
     }).then(function (value) {
       console.log(value);
@@ -2133,9 +2133,9 @@ function AdminProductForm(props) {
     }
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [JSON.stringify(user.api_token), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "row justify-content-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "col-md-4 sidebar shadow",
@@ -2157,9 +2157,9 @@ function AdminProductForm(props) {
             })
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "col-md-8",
-        children: [JSON.stringify(user.api_token), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "card",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "container",
@@ -2326,9 +2326,9 @@ function AdminProductForm(props) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             ref: finalPrintDisplay
           })]
-        })]
+        })
       })]
-    })
+    })]
   });
 }
 

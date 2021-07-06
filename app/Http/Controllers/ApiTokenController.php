@@ -25,7 +25,7 @@ class ApiTokenController extends Controller
                 'api_token' => hash('sha256', $token),
             ])->save();
 
-            return ['token' => $token];
+            return redirect('/');
         }
     }
 }

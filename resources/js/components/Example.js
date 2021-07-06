@@ -22,7 +22,7 @@ var token = '7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g'
 function AdminProductForm(props) {
     const [user, setuser] = useState({})
     useEffect(() => {
-        setuser(props.auth)
+        setuser(JSON.parse(props.auth))
     }, [])
     let fileRef = React.createRef()
     let sampleDisplay = React.createRef()
@@ -36,7 +36,7 @@ function AdminProductForm(props) {
             {
                 headers: {
                     'Accept': 'Application/json',
-                    'Authorization': `Bearer 7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g`
+                    'Authorization': `Bearer ${user.tl}`
                 }
             }
 
@@ -92,6 +92,9 @@ function AdminProductForm(props) {
     }
     return (
         <div className="container">
+             {
+                        JSON.stringify(user.api_token)
+                    }
             <div className="row justify-content-center">
                 <div className='col-md-4 sidebar shadow'>
                     <br />
@@ -99,13 +102,11 @@ function AdminProductForm(props) {
                         <li><a href='new'>new Property</a></li>
                         <li><a href='properties'>Properties</a></li>
                         <li><a href='order'>Orders</a></li>
-
+ 
                     </ul>
                 </div>
                 <div className="col-md-8">
-                    {
-                        JSON.stringify(user.api_token)
-                    }
+                  
                     <div className="card">
                         <div className='container'>
                             <form ref={formRef} onSubmit={handleSubmit}>
