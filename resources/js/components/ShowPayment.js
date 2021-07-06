@@ -44,8 +44,7 @@ export const ShowPayment = (props) => {
                 <button className="tp_button " onClick={
                     () => {window.IntaSend.run({
                         amount: price,
-                        currency: "KES",
-                        phone_number: "254796217595",
+                        currency: "KES", 
                         email: user.email,
                     }) 
                     window.addEventListener('messages', function(e) {
