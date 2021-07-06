@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import Axios from "axios"; 
+import Axios from "axios";
 // export const Sidebar = () => <ul>
 //     <li><a href='new'>new Property</a></li>
 //     <li><a href='properties'>Properties</a></li>
@@ -19,7 +19,11 @@ export const makeid = (length) => {
 
 var token = '7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g'
 
-function AdminProductForm() {
+function AdminProductForm(props) {
+    const [user, setuser] = useState({})
+    useEffect(() => {
+        setuser(props.auth)
+    }, [])
     let fileRef = React.createRef()
     let sampleDisplay = React.createRef()
     let finalPrintDisplay = React.createRef()
@@ -95,9 +99,13 @@ function AdminProductForm() {
                         <li><a href='new'>new Property</a></li>
                         <li><a href='properties'>Properties</a></li>
                         <li><a href='order'>Orders</a></li>
+
                     </ul>
                 </div>
                 <div className="col-md-8">
+                    {
+                        JSON.stringify(user.api_token)
+                    }
                     <div className="card">
                         <div className='container'>
                             <form ref={formRef} onSubmit={handleSubmit}>
@@ -187,5 +195,7 @@ function AdminProductForm() {
 export default AdminProductForm;
 
 if (document.getElementById('example')) {
-    ReactDOM.render(<AdminProductForm />, document.getElementById('example'));
+    const props = Object.assign({}, document.getElementById('example').dataset)
+
+    ReactDOM.render(<AdminProductForm {...props} />, document.getElementById('example'));
 }
