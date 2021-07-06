@@ -2069,7 +2069,7 @@ function AdminProductForm(props) {
       setuser = _useState2[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    setuser(JSON.parse(props.auth));
+    return setuser(JSON.parse(props.auth));
   }, []);
   var fileRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef();
   var sampleDisplay = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef();
@@ -2133,9 +2133,9 @@ function AdminProductForm(props) {
     }
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "container",
-    children: [JSON.stringify(user.api_token), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "row justify-content-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "col-md-4 sidebar shadow",
@@ -2328,7 +2328,7 @@ function AdminProductForm(props) {
           })]
         })
       })]
-    })]
+    })
   });
 }
 

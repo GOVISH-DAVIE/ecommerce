@@ -21,9 +21,7 @@ var token = '7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g'
 
 function AdminProductForm(props) {
     const [user, setuser] = useState({})
-    useEffect(() => {
-        setuser(JSON.parse(props.auth))
-    }, [])
+    useEffect(() =>  setuser(JSON.parse(props.auth)) , [])
     let fileRef = React.createRef()
     let sampleDisplay = React.createRef()
     let finalPrintDisplay = React.createRef()
@@ -91,10 +89,7 @@ function AdminProductForm(props) {
         }
     }
     return (
-        <div className="container">
-             {
-                        JSON.stringify(user.api_token)
-                    }
+        <div className="container"> 
             <div className="row justify-content-center">
                 <div className='col-md-4 sidebar shadow'>
                     <br />
