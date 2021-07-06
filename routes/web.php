@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',  [ClientController::class, 'index']);
 Auth::routes();
 Route::post('loginres',[AuthController::class, 'login']);
+Route::post('registerres',[AuthController::class, 'register']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('index', ClientController::class); 
 Route::get('/new', [PropertiesController::class, 'create']); 
