@@ -17,6 +17,26 @@ export const ShowPayment = (props) => {
     const [trackingId, setTrackingId] = useState(null)
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState('')
+const controllerClear = ({token, property_id}) =>Axios.post(
+    url+'newoder', {
+        'property_id': property_id,
+        'account':account,
+        'provider':provider,
+        'trackingId':trackingId,
+        'amount':price
+        
+    },
+    {
+        headers:{
+            'Authorization': `Bearer ${token}` 
+        }
+    }
+).then(res=>{
+    console.log(res);
+}) .catch(err=>{
+    console.log(err);
+})
+    
 
     useEffect(() => {
         //set up
@@ -24,9 +44,12 @@ export const ShowPayment = (props) => {
             publicAPIKey: process.env.MIX_PKEY,
             live: false,
         })
+
+
         setprice(parseInt(JSON.parse(props.showpaymentid).amount))
         setUser(JSON.parse(props.authdata))
         bindEvent(window, 'message', function (e) {
+
             console.log(e);
             if (e.data.message) {
                 console.log(e.data.message.provider ) 
@@ -34,9 +57,10 @@ export const ShowPayment = (props) => {
                 setProvider(e.data.message.provider)
                 setTrackingId(e.data.message.tracking_id)
                 setTransaction(e.data.message.state )
+                controllerClear(user.tl,    JSON.parse(props.showpaymentid).id)
                 if (e.data.message.identitier == 'intasend-status-update-cdrtl') {
                     if (e.data.message.state === "COMPLETE") { 
-                        console.log(22); 
+                       
                     } 
                     else if(e.data.message.state === "FAILED"){
                         console.log(e.data.message.state    );
@@ -88,6 +112,7 @@ export const ShowPayment = (props) => {
             {
                 transaction
             }
+             
         </div>
     </div>
 }

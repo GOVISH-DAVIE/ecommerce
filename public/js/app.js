@@ -2423,6 +2423,26 @@ var ShowPayment = function ShowPayment(props) {
       account = _useState14[0],
       setAccount = _useState14[1];
 
+  var controllerClear = function controllerClear(_ref) {
+    var token = _ref.token,
+        property_id = _ref.property_id;
+    return axios__WEBPACK_IMPORTED_MODULE_2___default().post(_Example__WEBPACK_IMPORTED_MODULE_3__.url + 'newoder', {
+      'property_id': property_id,
+      'account': account,
+      'provider': provider,
+      'trackingId': trackingId,
+      'amount': price
+    }, {
+      headers: {
+        'Authorization': "Bearer ".concat(token)
+      }
+    }).then(function (res) {
+      console.log(res);
+    })["catch"](function (err) {
+      console.log(err);
+    });
+  };
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     //set up
     window.IntaSend.setup({
@@ -2440,11 +2460,10 @@ var ShowPayment = function ShowPayment(props) {
         setProvider(e.data.message.provider);
         setTrackingId(e.data.message.tracking_id);
         setTransaction(e.data.message.state);
+        controllerClear(user.tl, JSON.parse(props.showpaymentid).id);
 
         if (e.data.message.identitier == 'intasend-status-update-cdrtl') {
-          if (e.data.message.state === "COMPLETE") {
-            console.log(22);
-          } else if (e.data.message.state === "FAILED") {
+          if (e.data.message.state === "COMPLETE") {} else if (e.data.message.state === "FAILED") {
             console.log(e.data.message.state);
             setTransaction(e.data.message.state);
             console.log(e.data.message.provider);

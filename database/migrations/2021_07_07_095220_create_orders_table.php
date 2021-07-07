@@ -22,6 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('account');
             $table->string('property_id');
             $table->string('transaction');
+            $table->string('amount');
             $table->timestamps();
         });
     }
