@@ -13,23 +13,52 @@ export const ShowPayment = (props) => {
     const [price, setprice] = useState(0)
     const [count, setcount] = useState(1)
     const [user, setUser] = useState(null)
- 
-    useEffect(() => {
+    const [transaction, setTransaction] = useState('PENDING')
+    const [trackingId, setTrackingId] = useState(null)
+    const [provider, setProvider] = useState(null)
+    const [account, setAccount] = useState('')
 
+    useEffect(() => {
+        //set up
         window.IntaSend.setup({
             publicAPIKey: process.env.MIX_PKEY,
             live: false,
         })
         setprice(parseInt(JSON.parse(props.showpaymentid).amount))
         setUser(JSON.parse(props.authdata))
+        bindEvent(window, 'message', function (e) {
+            console.log(e);
+            if (e.data.message) {
+                console.log(e.data.message.provider ) 
+                setAccount(e.data.message.account)
+                setProvider(e.data.message.provider)
+                setTrackingId(e.data.message.tracking_id)
+                setTransaction(e.data.message.state )
+                if (e.data.message.identitier == 'intasend-status-update-cdrtl') {
+                    if (e.data.message.state === "COMPLETE") { 
+                        console.log(22); 
+                    } 
+                    else if(e.data.message.state === "FAILED"){
+                        console.log(e.data.message.state    );
+                        setTransaction(e.data.message.state )
+                        console.log(e.data.message.provider )
+                    }
+                }
+            }
+        })
     }, [])
     useEffect(() => {
         setprice(count * parseInt(JSON.parse(props.showpaymentid).amount))
     }, [count])
+
+    const bindEvent = (element, eventName, eventHandler) => {
+        if (element.addEventListener) {
+            element.addEventListener(eventName, eventHandler, false);
+        }
+    }
     const onchangeItem = (e) => setcount(e.target.value)
 
  
-    // window.addEventListener(onmessage, )
 
     return user == null ? <></> : <div  >
         <div className="card col-sm-12" >
@@ -42,43 +71,23 @@ export const ShowPayment = (props) => {
                 <input type='number' onChange={onchangeItem} value={count} />
                 <br />
                 <button className="tp_button " onClick={
-                    () => {window.IntaSend.run({
-                        amount: price,
-                        currency: "KES", 
-                        email: user.email,
-                    }) 
-                    window.addEventListener('messages', function(e) {
-                        console.log(e.data);     
-                        if (e.data.message) {
-                            console.log(e.data);
-                            if (e.data.message.identitier == 'intasend-status-update-cdrtl') {
-                                if (e.data.message.state === "COMPLETE") {
-                                    // Do something on pay success
-                                    // Make sure redirectURL is ommited in 
-                                    // your setup function for this to work well
-                                }
-                            }
-                        }
-                    }, false)
-                    window.addEventListener(onmessage,  function(e) {
-                        console.log(e.data);     
-                        if (e.data.message) {
-                            console.log(e.data);
-                            if (e.data.message.identitier == 'intasend-status-update-cdrtl') {
-                                if (e.data.message.state === "COMPLETE") {
-                                    // Do something on pay success
-                                    // Make sure redirectURL is ommited in 
-                                    // your setup function for this to work well
-                                }
-                            }
-                        }
-                    }, false)
-                }
-                  
+                    () => {
+                        window.IntaSend.run({
+                            amount: price,
+                            currency: "KES",
+                            email: user.email,
+                        })
+
+
+                    }
+
                 } data-api_ref="payment-link" data-phone-number="254796217595"
                     data-email={user.email} data-amount={price} data-currency="KES">Buy Now</button>
 
             </div>
+            {
+                transaction
+            }
         </div>
     </div>
 }
