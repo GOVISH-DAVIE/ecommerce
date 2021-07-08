@@ -39,7 +39,7 @@ export const ShowPayment = (props) => {
             console.log(err);
         })
     }
-    useEffect(() => { 
+    useEffect(() => {
         transaction == 'COMPLETE' ? controllerClear() : null
 
     }, [transaction])
@@ -114,20 +114,24 @@ export const ShowPayment = (props) => {
                     data-email={user.email} data-amount={price} data-currency="KES">Buy Now</button>
 
             </div>
-            {
-                transaction =='COMPLETE' ?<>
-                <h3>
-                All Prints Have been Sent To your email
-                Order Number:{ transaction   }
-                Tracking ID :{ trackingId   }
 
-                </h3>
-                </>:<></>
+            {
+                transaction == 'COMPLETE' ? <>
+                    <h3>
+                        All Prints Have been Sent To your email
+                        Order Number:{transaction}
+                        Tracking ID :{trackingId}
+
+                    </h3>
+                </> : <>
+                    {
+
+                        transaction == 'PENDING' ? <></> : <>Transaction State {trackingId}</>
+                    }
+                </>
             }
 
-            <button onClick={() =>
-                controllerClear()
-            }>check Api</button>
+
 
         </div>
     </div>
