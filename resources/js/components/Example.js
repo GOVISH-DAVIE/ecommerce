@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Axios from "axios";
-// export const Sidebar = () => <ul>
-//     <li><a href='new'>new Property</a></li>
-//     <li><a href='properties'>Properties</a></li>
-//     <li><a href='order'>Orders</a></li>
-// </ul>
+
+ 
 export const url = '/api/';
 export const makeid = (length) => {
     var result = '';

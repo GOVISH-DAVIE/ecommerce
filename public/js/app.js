@@ -2051,11 +2051,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- // export const Sidebar = () => <ul>
-//     <li><a href='new'>new Property</a></li>
-//     <li><a href='properties'>Properties</a></li>
-//     <li><a href='order'>Orders</a></li>
-// </ul>
 
 
 
