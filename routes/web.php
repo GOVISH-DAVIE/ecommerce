@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AdminController;
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\Web\ClientController;
+use App\Http\Controllers\Web\OrdersController;
 use App\Http\Controllers\Web\PropertiesController;
 use App\Mail\SendMail;
 use Illuminate\Support\Facades\Artisan;
@@ -28,6 +29,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('index', ClientController::class); 
 Route::get('/new', [PropertiesController::class, 'create']); 
 Route::resource('properties', PropertiesController::class);
+
+Route::get('order', [OrdersController::class,'index'] );
 Route::get('/foo', function () {
     Artisan::call('storage:link');
     

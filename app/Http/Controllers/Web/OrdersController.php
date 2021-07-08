@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Orders;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class OrdersController extends Controller
 {
-      
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +16,8 @@ class OrdersController extends Controller
     public function index()
     {
         //
-
+        $o = Orders::all()->load('user')->load('property');
+        return view('orders.orders')->with('orders', $o);
     }
 
     /**
@@ -38,18 +37,7 @@ class OrdersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
-        
-        $o = new Orders();
-        $o->transaction =  $request->input('user_id');
-        $o->user_id =  $request->input('user_id');
-        $o->trackingId = $request->input('trackingId');
-        $o->provider = $request->input('provider');
-        $o->account =$request->input('account');
-        $o->property_id =$request->input('property_id');
-        $o->amount = $request->input('amount');
-        $o->save();
-        return response()->json(['state'=>'success']);
+    {
         //
     }
 
@@ -61,7 +49,7 @@ class OrdersController extends Controller
      */
     public function show($id)
     {
-        //  
+        //
     }
 
     /**
