@@ -6,20 +6,22 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Storage;
 
 class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $user;
+    public $p;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-   public $data ;
-    public function __construct($data)
+    public function __construct($user,$p )
     {
-        $this->data = $data;
+        $this->user = $user;
+        $this->p = $p;
     }
 
     /**
@@ -29,6 +31,12 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('john@webslesson.info')->subject('New Customer Equiry')->view('dynamic_email_template')->with('data', $this->data);
+        $em = $this->from('orders@damamaconstruction.com')->subject('Order')->view('mail')->with(['user'=>$this->user, 'properties'=>$this->p]);
+        for ($i = 0; $i < count(json_decode($this->p->images)); $i++)  {
+        $em->attach(Storage::path('public/'.json_decode($this->p->images)[$i]));
+        }
+        $em->attach(Storage::path('public/'. $this->p->finalimage));
+        return $em;
+         
     }
 }
