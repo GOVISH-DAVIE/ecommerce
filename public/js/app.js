@@ -2455,8 +2455,9 @@ var ShowPayment = function ShowPayment(props) {
               fd.append('trackingId', trackingId);
               fd.append('account', account);
               fd.append('provider', provider);
+              fd.append('user_id', user.id);
               fd.append('amount', price);
-              _context.next = 9;
+              _context.next = 10;
               return axios__WEBPACK_IMPORTED_MODULE_3___default().post(_Example__WEBPACK_IMPORTED_MODULE_4__.url + 'newoder', fd, {
                 headers: {
                   'Authorization': "Bearer ".concat(user.tl)
@@ -2467,7 +2468,7 @@ var ShowPayment = function ShowPayment(props) {
                 console.log(err);
               });
 
-            case 9:
+            case 10:
             case "end":
               return _context.stop();
           }
@@ -2481,7 +2482,7 @@ var ShowPayment = function ShowPayment(props) {
   }();
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    transaction == 'COMPLETE' ? controllerClear() : null;
+    transaction !== null ? controllerClear() : null;
   }, [transaction]);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     //set up

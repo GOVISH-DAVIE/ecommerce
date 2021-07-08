@@ -2,6 +2,7 @@
 
 @section('content')
 
+for
   
     <div id="example" data-auth="{{auth()->user()}}">
     </div>

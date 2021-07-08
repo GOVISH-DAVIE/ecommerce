@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Orders;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrdersController extends Controller
 {
+      
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +18,7 @@ class OrdersController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -34,8 +38,18 @@ class OrdersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        return $_POST;
+    { 
+        
+        $o = new Orders();
+        $o->transaction =
+        $o->user_id = $request->input('trackingId');
+        $o->trackingId = $request->input('user_id');
+        $o->provider = $request->input('provider');
+        $o->account =$request->input('account');
+        $o->property_id =$request->input('property_id');
+        $o->amount = $request->input('amount');
+        $o->save();
+        return response()->json(['state'=>'success']);
         //
     }
 

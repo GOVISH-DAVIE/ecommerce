@@ -20,8 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('trackingId');
             $table->string('provider');
             $table->string('account');
-            $table->string('property_id');
-            $table->string('transaction');
+            $table->string('property_id'); 
             $table->string('amount');
             $table->timestamps();
         });

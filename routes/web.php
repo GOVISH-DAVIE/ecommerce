@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AdminController;
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\Web\ClientController;
 use App\Http\Controllers\Web\PropertiesController;
+use App\Mail\SendMail;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -29,5 +30,6 @@ Route::get('/new', [PropertiesController::class, 'create']);
 Route::resource('properties', PropertiesController::class);
 Route::get('/foo', function () {
     Artisan::call('storage:link');
+    
     
     });

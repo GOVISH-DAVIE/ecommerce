@@ -24,6 +24,7 @@ export const ShowPayment = (props) => {
         fd.append('trackingId', trackingId)
         fd.append('account', account)
         fd.append('provider', provider)
+        fd.append('user_id', user.id)
         fd.append('amount', price)
         await Axios.post(
             url + 'newoder', fd,
@@ -38,8 +39,8 @@ export const ShowPayment = (props) => {
             console.log(err);
         })
     }
-    useEffect(() => {
-        transaction == 'COMPLETE' ? controllerClear() : null
+    useEffect(() => { 
+        transaction !== null ? controllerClear() : null
 
     }, [transaction])
 
