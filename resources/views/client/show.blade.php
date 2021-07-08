@@ -4,6 +4,7 @@
     <div class="container-fluid">
         <div class="row ">
 
+         
             <div class=" col-md-8">
                 <div id="ShowItem" data-ShowItemid="{{ $property }}"></div>
             </div>

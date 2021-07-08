@@ -54,8 +54,8 @@ class ClientController extends Controller
     public function show($id)
     {
         //
-        $property = Properties::find($id);
-        return view('client.show')->with('property', $property);
+            $property = Properties::find($id);
+            return view('client.show')->with('property', $property);
 
     }
 

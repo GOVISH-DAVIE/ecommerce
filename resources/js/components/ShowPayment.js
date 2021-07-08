@@ -40,7 +40,7 @@ export const ShowPayment = (props) => {
         })
     }
     useEffect(() => { 
-        transaction !== null ? controllerClear() : null
+        transaction == 'COMPLETE' ? controllerClear() : null
 
     }, [transaction])
 
@@ -115,7 +115,14 @@ export const ShowPayment = (props) => {
 
             </div>
             {
-                transaction
+                transaction =='COMPLETE' ?<>
+                <h3>
+                All Prints Have been Sent To your email
+                Order Number:{ transaction   }
+                Tracking ID :{ trackingId   }
+
+                </h3>
+                </>:<></>
             }
 
             <button onClick={() =>

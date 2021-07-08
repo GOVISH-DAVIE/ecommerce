@@ -2482,7 +2482,7 @@ var ShowPayment = function ShowPayment(props) {
   }();
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    transaction !== null ? controllerClear() : null;
+    transaction == 'COMPLETE' ? controllerClear() : null;
   }, [transaction]);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     //set up
@@ -2556,7 +2556,11 @@ var ShowPayment = function ShowPayment(props) {
           "data-currency": "KES",
           children: "Buy Now"
         })]
-      }), transaction, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+      }), transaction == 'COMPLETE' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h3", {
+          children: ["All Prints Have been Sent To your email Order Number:", transaction, "Tracking ID :", trackingId]
+        })
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
         onClick: function onClick() {
           return controllerClear();
         },
