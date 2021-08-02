@@ -48,7 +48,7 @@ export const ShowPayment = (props) => {
         //set up
         window.IntaSend.setup({
             publicAPIKey: process.env.MIX_PKEY,
-            live: false,
+            live: true,
         })
 
 
