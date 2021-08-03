@@ -27,7 +27,7 @@ Route::post('loginres',[AuthController::class, 'login']);
 Route::post('registerres',[AuthController::class, 'register']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('index', ClientController::class); 
-Route::get('/new', [PropertiesController::class, 'create']); 
+Route::get('/new', [PropertiesController::class, 'create'])->middleware('auth'); 
 Route::resource('properties', PropertiesController::class);
 
 Route::get('order', [OrdersController::class,'index'] );

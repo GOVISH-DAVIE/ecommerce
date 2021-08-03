@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Axios from "axios";
+import Loading from "./load.gif";
 
- 
+
 export const url = '/api/';
 export const makeid = (length) => {
     var result = '';
@@ -18,13 +19,15 @@ var token = '7eLqJxu79G948Pc21nZN7EP3xw8DNxpiHc7siAZdUQ61qdpRTff7gw6wX12g'
 
 function AdminProductForm(props) {
     const [user, setuser] = useState({})
-    useEffect(() =>  setuser(JSON.parse(props.auth)) , [])
+    useEffect(() => setuser(JSON.parse(props.auth)), [])
     let fileRef = React.createRef()
     let sampleDisplay = React.createRef()
     let finalPrintDisplay = React.createRef()
     let finalPrint = React.createRef()
     let formRef = React.createRef()
+    const [loading, setloading] = useState(false)
     const handleSubmit = (e) => {
+        setloading(true)
         let fd = new FormData(e.target)
         Axios.post(
             url + 'form', fd,
@@ -36,6 +39,7 @@ function AdminProductForm(props) {
             }
 
         ).then(value => {
+            setloading(false)
             console.log(value);
             window.location.href = '/properties'
         })
@@ -86,7 +90,7 @@ function AdminProductForm(props) {
         }
     }
     return (
-        <div className="container"> 
+        <div className="container">
             <div className="row justify-content-center">
                 <div className='col-md-4 sidebar shadow'>
                     <br />
@@ -94,11 +98,11 @@ function AdminProductForm(props) {
                         <li><a href='new'>new Property</a></li>
                         <li><a href='properties'>Properties</a></li>
                         <li><a href='order'>Orders</a></li>
- 
+
                     </ul>
                 </div>
                 <div className="col-md-8">
-                  
+
                     <div className="card">
                         <div className='container'>
                             <form ref={formRef} onSubmit={handleSubmit}>
@@ -171,7 +175,10 @@ function AdminProductForm(props) {
                                 </div>
 
 
-                                <button type="submit" className="btn btn-primary">Submit</button>
+
+                                <button type="submit" className="btn btn-primary"> {!loading ? <img height={40} src={Loading}
+                                /> : Submit} </button>
+
                             </form>
                         </div>
                         <div ref={sampleDisplay} id='sample'></div>

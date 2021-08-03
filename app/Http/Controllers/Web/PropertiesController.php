@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Models\Properties;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PropertiesController extends Controller
 {
@@ -29,7 +30,9 @@ class PropertiesController extends Controller
     public function create()
     {
         //
-        return  view('home');
+
+        return Auth::user()->perm!='admin'?redirect('/'):view('home');
+     
     }
 
     /**

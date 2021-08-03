@@ -9,7 +9,8 @@ const ClientHome = (props) => {
         <div className='row'> {
             properties.map((value, index) => <div key={index} className='col-md-4'>
                 <div className="card "  >
-                    <img className="card-img-top" src={`/storage/${value['finalimage']}`} alt="Card image cap" />
+
+                    <img className="card-img-top" src={`/storage/${JSON.parse(value.images)[0]}`} alt="Card image cap" />
                     <div className="card-body">
                         <h5 className="card-title">{value['Title']}</h5>
                         <h5 className="card-title">KEs {value['amount']}</h5>
