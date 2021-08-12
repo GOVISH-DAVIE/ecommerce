@@ -175,9 +175,11 @@ function AdminProductForm(props) {
                                 </div>
 
 
-
-                                <button type="submit" className="btn btn-primary"> {!loading ? <img height={40} src={Loading}
-                                /> : Submit} </button>
+                                {
+                                    JSON.stringify(loading)
+                                }
+                                <button type="submit" className="btn btn-primary"> {loading  ? <img height={40} src={Loading}
+                                /> : "Submit"} </button>
 
                             </form>
                         </div>
