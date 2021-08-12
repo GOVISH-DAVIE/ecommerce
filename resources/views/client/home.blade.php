@@ -101,36 +101,37 @@
             </h4>
             <div class=" ">
                 <form>
-                 <div class="cotainer">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group col-sm-12">
-                                <label for="exampleInputEmail1">Name</label>
-                                <input type="Text" class="form-control col-sm-12" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                    placeholder="Full Name">
-    
+                    <div class="cotainer">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group col-sm-12">
+                                    <label for="exampleInputEmail1">Name</label>
+                                    <input type="Text" class="form-control col-sm-12" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Full Name">
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group col-sm-12">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control col-sm-12" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Enter email">
+
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="form-group col-sm-12" >
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control col-sm-12" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                    placeholder="Enter email">
-    
-                            </div>
-                        </div>
-                     </div>
-                 </div>
+                    </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Subject</label>
                         <input type="Text" class="form-control" id="exampleInputPassword1" placeholder="Subject">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Subject</label>
-                        <textarea type="Text" class="form-control" id="exampleInputPassword1" placeholder="Type your message here">
-                            </textarea>
+                        <textarea type="Text" class="form-control" id="exampleInputPassword1"
+                            placeholder="Type your message here">
+                                </textarea>
                     </div>
-                     
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
